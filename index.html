@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Parcial Ultra-Avanzado: Genética y Casos Clínicos</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1f4e78;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        .section-title {
+            background-color: #1f4e78;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+        .question-card {
+            background: #fafbfc;
+            border: 1px solid #e1e4e8;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .question-card:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .question-title {
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #24292e;
+            font-size: 1.05em;
+        }
+        .options label {
+            display: block;
+            padding: 8px 12px;
+            margin-bottom: 8px;
+            background: #fff;
+            border: 1px solid #d1d5da;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #f1f8ff;
+            border-color: #0366d6;
+        }
+        .options input {
+            margin-right: 10px;
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        button {
+            background-color: #2ea44f;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background-color: #2c974b;
+        }
+        #results {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            background: #e6ffed;
+            border: 1px solid #acf2bd;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #22863a;
+        }
+        .correct {
+            background-color: #dcffe4 !important;
+            border-color: #28a745 !important;
+        }
+        .incorrect {
+            background-color: #ffeef0 !important;
+            border-color: #d73a49 !important;
+        }
+        .explanation {
+            font-size: 0.9em;
+            color: #586069;
+            margin-top: 8px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Examen Parcial Ultra-Avanzado</h1>
+    <div class="subtitle">Nivel Experto: Técnicas Moleculares y Casos Clínicos Complejos</div>
+    
+    <form id="quizForm">
+        <!-- Sección I -->
+        <div class="section-title">Sección I: Fundamentos Teóricos, Resolución y Limitaciones</div>
+
+        <div class="question-card" id="q1">
+            <div class="question-title">1. Sobre la técnica de FISH (Hibridación <i>In Situ</i> Fluorescente): ¿Cuál es el rango de resolución típico y una de sus ventajas operativas clave frente al cariotipo tradicional según el cuadro?</div>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) Resolución de 5 a 10 Mb y requiere obligatoriamente un cultivo celular previo de 15 días.</label>
+                <label><input type="radio" name="q1" value="B"> B) Secuencias específicas de ADN de 150–900 kb, no necesita cultivo previo y emplea sondas fluorescentes.</label>
+                <label><input type="radio" name="q1" value="C"> C) Resolución a nivel de pares de bases individuales con cobertura completa de todo el genoma en una sola prueba.</label>
+                <label><input type="radio" name="q1" value="D"> D) Rango macroscópico de 150 a 300 kb con una limitación estricta de análisis exclusivo en sangre periférica.</label>
+            </div>
+            <div class="explanation" id="exp1" style="display:none;">Respuesta correcta: B. FISH utiliza sondas fluorescentes, no requiere cultivo previo y analiza secuencias de 150-900 kb[cite: 1].</div>
+        </div>
+
+        <div class="question-card" id="q2">
+            <div class="question-title">2. Comparación de resolución entre CHIPS de ADN (CGH convencional vs. aCGH): ¿Qué diferencia analítica y de sensibilidad existe entre los microarrays de hibridación genómica comparada (aCGH) y el CGH convencional?</div>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) El CGH convencional detecta de 5 a 10 Mb, mientras que el aCGH avanzado es mucho más sensible, detectando entre 50 y 100 kb.</label>
+                <label><input type="radio" name="q2" value="B"> B) El aCGH requiere cultivo celular de 15 días, mientras que el CGH convencional utiliza microscopía de fluorescencia directa.</label>
+                <label><input type="radio" name="q2" value="C"> C) No existen diferencias de resolución, ambas operan estrictamente en el rango de los pares de bases individuales.</label>
+                <label><input type="radio" name="q2" value="D"> D) El aCGH solo detecta anomalías numéricas de cromosomas enteros, igual que el cariotipo.</label>
+            </div>
+            <div class="explanation" id="exp2" style="display:none;">Respuesta correcta: A. El aCGH es mucho más sensible (50-100 kb) en comparación con el CGH convencional (5-10 Mb)[cite: 1].</div>
+        </div>
+
+        <div class="question-card" id="q3">
+            <div class="question-title">3. Limitaciones y rango analítico del Mapeo Óptico del Genoma Humano: ¿Cuál es el principal campo de acción analítica de esta técnica y su limitación más destacada en la práctica clínica?</div>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) Analiza mutaciones puntuales de nucleótidos individuales; su limitación es que no detecta deleciones.</label>
+                <label><input type="radio" name="q3" value="B"> B) Observa y ordena grandes fragmentos de ADN (rango de 150–300 kb) para alteraciones estructurales, siendo una técnica muy costosa.</label>
+                <label><input type="radio" name="q3" value="C"> C) Produce insulina recombinante a gran escala; su limitación es la pérdida constante de fragmentos de expresión.</label>
+                <label><input type="radio" name="q3" value="D"> D) Diagnostica trisomías mediante sondas fluorescentes en parafina en menos de 2 horas.</label>
+            </div>
+            <div class="explanation" id="exp3" style="display:none;">Respuesta correcta: B. El mapeo óptico observa grandes fragmentos (150-300 kb) y destaca por ser muy costoso[cite: 1].</div>
+        </div>
+
+        <div class="question-card" id="q4">
+            <div class="question-title">4. Costo y restricciones metodológicas del Cariotipo: ¿Por qué el cariotipo convencional, a pesar de ser la prueba diagnóstica citogenética más económica del mercado (300.000 a 500.000), presenta demoras significativas en la entrega de resultados?</div>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) Porque requiere la secuenciación completa de exomas mediante inteligencia artificial.</label>
+                <label><input type="radio" name="q4" value="B"> B) Porque exige un cultivo celular previo que toma aproximadamente entre 10 y 15 días.</label>
+                <label><input type="radio" name="q4" value="C"> C) Porque utiliza microarrays de ADN de alto costo que demoran en calibrarse.</label>
+                <label><input type="radio" name="q4" value="D"> D) Porque requiere múltiples rondas de edición génica con CRISPR para validar el cromosoma.</label>
+            </div>
+            <div class="explanation" id="exp4" style="display:none;">Respuesta correcta: B. El cariotipo requiere cultivo celular previo, lo que demora entre 10 y 15 días[cite: 1].</div>
+        </div>
+
+        <div class="question-card" id="q5">
+            <div class="question-title">5. Aplicaciones industriales y limitaciones del ADN Recombinante / Librería Genómica: Dentro de la ingeniería genética descrita, ¿cuál de los siguientes enunciados describe correctamente su propósito principal y sus desventajas técnicas?</div>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) Su objetivo es editar directamente las células somáticas de un paciente en vivo; su limitación es el alto costo del microscopio láser.</label>
+                <label><input type="radio" name="q5" value="B"> B) Busca clonar fragmentos para fabricar medicamentos biotecnológicos (como insulina o factores de coagulación) y vacunas; sus limitaciones incluyen la dificultad en la búsqueda del gen y la posible pérdida de fragmentos.</label>
+                <label><input type="radio" name="q5" value="C"> C) Diagnostica microdeleciones de 50 kb en biopsias de tejido parafinado en 24 horas.</label>
+                <label><input type="radio" name="q5" value="D"> D) Mide la farmacocinética de fármacos anticoagulantes basándose en el polimorfismo de un solo nucleótido (SNP).</label>
+            </div>
+            <div class="explanation" id="exp5" style="display:none;">Respuesta correcta: B. El ADN recombinante clona fragmentos para producir proteínas y medicamentos, enfrentando dificultad en la búsqueda de genes y pérdida de fragmentos[cite: 1].</div>
+        </div>
+
+        <div class="question-card" id="q6">
+            <div class="question-title">6. Diferencia conceptual entre Terapia Génica y CRISPR: ¿Cómo se distingue fundamentalmente la Terapia Génica convencional de la tecnología CRISPR según los datos del cuadro?</div>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) La Terapia Génica modifica el material genético del paciente introduciendo genes nuevos o sanos para tratar la raíz de la enfermedad, mientras que CRISPR utiliza un ARN guía y la proteína Cas para modificar regiones específicas del ADN de manera dirigida.</label>
+                <label><input type="radio" name="q6" value="B"> B) La Terapia Génica es una prueba diagnóstica de bajo costo, y CRISPR es una herramienta exclusiva para fabricar insulina recombinante.</label>
+                <label><input type="radio" name="q6" value="C"> C) CRISPR requiere obligatoriamente un cultivo celular de 15 días, a diferencia de la terapia génica que se realiza sin células.</label>
+                <label><input type="radio" name="q6" value="D"> D) No guardan relación; la terapia génica solo analiza el cariotipo y CRISPR realiza mapeo óptico.</label>
+            </div>
+            <div class="explanation" id="exp6" style="display:none;">Respuesta correcta: A. La terapia génica introduce genes nuevos/sanos, mientras que CRISPR edita con ARN guía y proteína Cas[cite: 1].</div>
+        </div>
+
+        <div class="question-card" id="q7">
+            <div class="question-title">7. Riesgos y seguridad de la tecnología CRISPR: Durante la edición genómica mediante CRISPR, ¿cuál es una de las limitaciones y riesgos técnicos señalados en el cuadro?</div>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) No puede detectar translocaciones equilibradas ni mosaicismos cromosómicos.</label>
+                <label><input type="radio" name="q7" value="B"> B) Es una prueba diagnóstica excesivamente económica pero con un margen de error del 100% en sangre periférica.</label>
+                <label><input type="radio" name="q7" value="C"> C) Puede producir cambios no deseados o efectos secundarios fuera del sitio objetivo ("off-target"), y no funciona de manera perfecta en términos de seguridad.</label>
+                <label><input type="radio" name="q7" value="D"> D) Su resolución está limitada estrictamente a 10 megabases, impidiendo ver genes individuales.</label>
+            </div>
+            <div class="explanation" id="exp7" style="display:none;">Respuesta correcta: C. CRISPR puede generar cambios no deseados y presenta retos de seguridad (efectos fuera del objetivo)[cite: 1].</div>
+        </div>
+
+        <div class="question-card" id="q8">
+            <div class="question-title">8. Retos metodológicos de la Farmacogenética: ¿Por qué la Farmacogenética enfrenta limitaciones actuales en su implementación clínica generalizada?</div>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) Porque requiere el uso de secuenciación óptica de fragmentos mayores a 300 kb de forma obligatoria.</label>
+                <label><input type="radio" name="q8" value="B"> B) Debido a la falta de suficiente evidencia científica consolidada y a que frecuentemente presenta tamaños muestrales limitados en los estudios.</label>
+                <label><input type="radio" name="q8" value="C"> C) Porque destruye la muestra de ADN del paciente durante el proceso de hibridación con sondas fluorescentes.</label>
+                <label><input type="radio" name="q8" value="D"> D) Porque su costo operativo supera los 10 millones de unidades monetarias por prueba.</label>
+            </div>
+            <div class="explanation" id="exp8" style="display:none;">Respuesta correcta: B. La farmacogenética enfrenta falta de suficiente evidencia y tamaño muestral limitado[cite: 1].</div>
+        </div>
+
+        <!-- Sección II: Casos Clínicos y Dificultad Aumentada -->
+        <div class="section-title">Sección II: Casos Clínicos y Escenarios Avanzados</div>
+
+        <div class="question-card" id="q9">
+            <div class="question-title">9. Caso Clínico 1 (Oncología Molecular): Un patólogo recibe una muestra de tejido tumoral parafinado de un paciente con sospecha de un linfoma que presenta una translocación específica en un locus determinado. El oncólogo necesita un resultado rápido, enfocado en esa región y que <b>no requiera cultivo celular previo</b>. ¿Qué técnica debe solicitar?</div>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) Cariotipo convencional.</label>
+                <label><input type="radio" name="q9" value="B"> B) FISH (Hibridación In Situ Fluorescente).</label>
+                <label><input type="radio" name="q9" value="C"> C) Mapeo óptico del genoma humano.</label>
+                <label><input type="radio" name="q9" value="D"> D) Terapia génica somática.</label>
+            </div>
+            <div class="explanation" id="exp9" style="display:none;">Respuesta correcta: B. FISH es rápida, usa sondas en parafina y no requiere cultivo[cite: 1].</div>
+        </div>
+
+        <div class="question-card" id="q10">
+            <div class="question-title">10. Caso Clínico 2 (Genética Pediátrica): Un lactante presenta múltiples malformaciones congénitas sugestivas de un síndrome genético por una microdeleción sutil de aproximadamente 75 kb que el cariotipo estándar no logra visualizar. ¿Cuál es la prueba con la sensibilidad adecuada (50-100 kb) para resolver este diagnóstico?</div>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) CHIPS de ADN (aCGH).</label>
+                <label><input type="radio" name="q10" value="B"> B) ADN recombinante de librería genómica.</label>
+                <label><input type="radio" name="q10" value="C"> C) FISH en interfase con baja resolución (900 kb).</label>
+                <label><input type="radio" name="q10" value="D"> D) Farmacogenética clínica.</label>
+            </div>
+            <div class="explanation" id="exp10" style="display:none;">Respuesta correcta: A. aCGH tiene una alta sensibilidad de 50-100 kb, perfecta para microdeleciones[cite: 1].</div>
+        </div>
+
+        <div class="question-card" id="q11">
+            <div class="question-title">11. Caso Clínico 3 (Citogenética Básica): En un hospital rural de recursos limitados, un médico general evalúa a un recién nacido con fenotipo característico de trisomía 13 (síndrome de Patau). Requiere confirmar una alteración cromosómica numérica global de gran tamaño buscando la opción <b>más económica</b> del mercado. ¿Qué examen solicita?</div>
+            <div class="options">
+                <label><input type="radio" name="q11" value="A"> A) Mapeo óptico de alta resolución.</label>
+                <label><input type="radio" name="q11" value="B"> B) Un cariotipo (reconocido por ser el más económico, entre 300.000 y 500.000).</label>
+                <label><input type="radio" name="q11" value="C"> C) Edición génica por CRISPR.</label>
+                <label><input type="radio" name="q11" value="D"> D) Secuenciación masiva por microarrays aCGH.</label>
+            </div>
+            <div class="explanation" id="exp11" style="display:none;">Respuesta correcta: B. El cariotipo es la prueba citogenética más económica (300.000 - 500.000)[cite: 1].</div>
+        </div>
+
+        <div class="question-card" id="q12">
+            <div class="question-title">12. Caso Clínico 4 (Biotecnología Farmacéutica): Una compañía biofarmacéutica necesita desarrollar un proceso biológico para producir hormona de crecimiento humana a gran escala mediante la clonación de fragmentos de ADN en vectores de expresión. ¿Qué tecnología descrita en el cuadro es la base de este proceso?</div>
+            <div class="options">
+                <label><input type="radio" name="q12" value="A"> A) ADN Recombinante - Librería genómica.</label>
+                <label><input type="radio" name="q12" value="B"> B) FISH oncológica.</label>
+                <label><input type="radio" name="q12" value="C"> C) Cariotipo bandeo G.</label>
+                <label><input type="radio" name="q12" value="D"> D) Mapeo óptico estructural.</label>
+            </div>
+            <div class="explanation" id="exp12" style="display:none;">Respuesta correcta: A. El ADN recombinante produce medicamentos como hormona de crecimiento e insulina[cite: 1].</div>
+        </div>
+
+        <div class="question-card" id="q13">
+            <div class="question-title">13. Caso Clínico 5 (Medicina Personalizada): Un psiquiatra evalúa a un paciente con depresión mayor que no responde a los inhibidores selectivos de recaptación de serotonina habituales y experimenta efectos adversos severos. El médico desea estudiar cómo las variantes genéticas particulares del paciente alteran el metabolismo del fármaco. ¿Qué disciplina del cuadro debe aplicar?</div>
+            <div class="options">
+                <label><input type="radio" name="q13" value="A"> A) Terapia génica correctiva.</label>
+                <label><input type="radio" name="q13" value="B"> B) Farmacogenética.</label>
+                <label><input type="radio" name="q13" value="C"> C) Mapeo óptico del genoma.</label>
+                <label><input type="radio" name="q13" value="D"> D) Hibridación In Situ Fluorescente.</label>
+            </div>
+            <div class="explanation" id="exp13" style="display:none;">Respuesta correcta: B. Farmacogenética estudia el efecto de las variantes genéticas en la respuesta a fármacos[cite: 1].</div>
+        </div>
+
+        <div class="question-card" id="q14">
+            <div class="question-title">14. Caso Clínico 6 (Terapia Avanzada de Enfermedades Raras): Un paciente padece una inmunodeficiencia combinada severa (IDSC) de origen monogénico. Un comité médico evalúa un tratamiento curativo de vanguardia que consiste en modificar el material genético defectuoso introduciendo genes sanos funcionales directamente en las células del paciente. ¿Ante qué enfoque terapéutico nos encontramos?</div>
+            <div class="options">
+                <label><input type="radio" name="q14" value="A"> A) Aplicación de Chips de ADN aCGH.</label>
+                <label><input type="radio" name="q14" value="B"> B) Terapia Génica.</label>
+                <label><input type="radio" name="q14" value="C"> C) Librería genómica recombinante diagnóstica.</label>
+                <label><input type="radio" name="q14" value="D"> D) Farmacogenética poblacional.</label>
+            </div>
+            <div class="explanation" id="exp14" style="display:none;">Respuesta correcta: B. Terapia génica introduce genes nuevos o sanos modificados en la célula para tratar la enfermedad[cite: 1].</div>
+        </div>
+
+        <div class="question-card" id="q15">
+            <div class="question-title">15. Caso Clínico 7 (Ingeniería Genética de Precisión): Un grupo de investigadores en genética molecular pretende corregir una mutación puntual específica desactivando un alelo patógeno mediante un sistema guiado por ARN y una enzima de corte específico (proteína Cas). ¿Qué tecnología están implementando en el laboratorio?</div>
+            <div class="options">
+                <label><input type="radio" name="q15" value="A"> A) CRISPR.</label>
+                <label><input type="radio" name="q15" value="B"> B) Cariotipo espectral.</label>
+                <label><input type="radio" name="q15" value="C"> C) FISH en bloques de parafina.</label>
+                <label><input type="radio" name="q15" value="D"> D) Mapeo óptico macroscópico.</label>
+            </div>
+            <div class="explanation" id="exp15" style="display:none;">Respuesta correcta: A. CRISPR utiliza ARN guía y la proteína Cas para modificar el ADN de manera dirigida[cite: 1].</div>
+        </div>
+
+        <!-- Nuevas Preguntas Ultra-Avanzadas (Casos 8 al 12) -->
+        <div class="question-card" id="q16">
+            <div class="question-title">16. Caso Clínico 8 (Complejidad de Mosaicismos): Un paciente presenta un cuadro clínico leve compatible con un mosaicismo cromosómico de baja proporción (menos del 10% de células afectadas). Al evaluar qué técnica elegir, el equipo médico recuerda una limitación clave compartida por los microarrays (CHIPS de ADN - aCGH) y el cariotipo convencional respecto a esta condición. ¿Cuál es dicha limitación operativa descrita en el cuadro?</div>
+            <div class="options">
+                <label><input type="radio" name="q16" value="A"> A) Presentan extrema dificultad o incapacidad para visualizar y detectar adecuadamente los mosaicismos en porcentajes bajos.</label>
+                <label><input type="radio" name="q16" value="B"> B) Requieren obligatoriamente sondas de interferase fluorescentes mayores a 900 kb para calcular el porcentaje celular.</label>
+                <label><input type="radio" name="q16" value="C"> C) Su costo operativo supera los 5 millones de unidades monetarias por cada célula analizada.</label>
+                <label><input type="radio" name="q16" value="D"> D) Destruyen por completo el material genético impidiendo cualquier análisis posterior.</label>
+            </div>
+            <div class="explanation" id="exp16" style="display:none;">Respuesta correcta: A. Una de las limitaciones de los CHIPS de ADN (aCGH) y cariotipos es la dificultad para detectar mosaicismos[cite: 1].</div>
+        </div>
+
+        <div class="question-card" id="q17">
+            <div class="question-title">17. Caso Clínico 9 (Limitaciones en Translocaciones y Genoma Completo): Un genetista clínico evalúa una muestra en la cual sospecha una translocación cromosómica balanceada compleja. Se plantea utilizar CHIPS de ADN (aCGH). Sin embargo, al revisar las restricciones metodológicas del cuadro, advierte un impedimento categórico de los CHIPS frente a este tipo de alteraciones. ¿Cuál es?</div>
+            <div class="options">
+                <label><input type="radio" name="q17" value="A"> A) Tardan exactamente 15 días debido al cultivo celular obligatorio.</label>
+                <label><input type="radio" name="q17" value="B"> B) No analizan el genoma completo de manera exhaustiva tradicional y <b>no se pueden ver translocaciones</b>[cite: 1].</label>
+                <label><input type="radio" name="q17" value="C"> C) Su resolución es idéntica a la del cariotipo convencional (5 a 10 Mb).</label>
+                <label><input type="radio" name="q17" value="D"> D) Solo funcionan en bloques de parafina oncológica mediante la proteína Cas.</label>
+            </div>
+            <div class="explanation" id="exp17" style="display:none;">Respuesta correcta: B. Los CHIPS de ADN no analizan el genoma completo de la forma tradicional y no permiten ver translocaciones[cite: 1].</div>
+        </div>
+
+        <div class="question-card" id="q18">
+            <div class="question-title">18. Caso Clínico 10 (Arquitectura Macroestructural): Un investigador forense y genómico necesita estudiar alteraciones estructurales masivas y ordenar fragmentos de ADN de gran tamaño en el rango analítico de <b>150 a 300 kb</b>. Sabe que la técnica requiere una inversión financiera muy elevada[cite: 1]. ¿De qué técnica se trata?</div>
+            <div class="options">
+                <label><input type="radio" name="q18" value="A"> A) Cariotipo de alta resolución.</label>
+                <label><input type="radio" name="q18" value="B"> B) Mapeo óptico del genoma humano[cite: 1].</label>
+                <label><input type="radio" name="q18" value="C"> C) Edición por CRISPR-Cas9.</label>
+                <label><input type="radio" name="q18" value="D"> D) Farmacogenética metabolómica.</label>
+            </div>
+            <div class="explanation" id="exp18" style="display:none;">Respuesta correcta: B. El mapeo óptico del genoma humano permite ordenar grandes fragmentos (150-300 kb) y es muy costoso[cite: 1].</div>
+        </div>
+
+        <div class="question-card" id="q19">
+            <div class="question-title">19. Caso Clínico 11 (Riesgos de Edición y Terapia Avanzada): Un comité de bioseguridad evalúa dos estrategias de intervención genética. Una de ellas introduce genes nuevos mediante ingeniería recombinante/vectores, mientras que la otra utiliza una tecnología basada en ARN guía y proteína Cas que permite modificar el ADN de manera dirigida[cite: 1]. No obstante, los expertos señalan que esta última técnica posee un riesgo crítico especificado en el cuadro. ¿Cuál es?</div>
+            <div class="options">
+                <label><input type="radio" name="q19" value="A"> A) Puede producir cambios no deseados y no funciona de manera perfecta en términos de seguridad[cite: 1].</label>
+                <label><input type="radio" name="q19" value="B"> B) Demora siempre 15 días por requerir cultivo celular forzoso.</label>
+                <label><input type="radio" name="q19" value="C"> C) Su costo es inferior a 500.000 unidades monetarias, volviéndola imprecisa.</label>
+                <label><input type="radio" name="q19" value="D"> D) Solo sirve para producir insulina humana en bacterias.</label>
+            </div>
+            <div class="explanation" id="exp19" style="display:none;">Respuesta correcta: A. CRISPR puede producir cambios no deseados y no es perfecta en seguridad[cite: 1].</div>
+        </div>
+
+        <div class="question-card" id="q20">
+            <div class="question-title">20. Caso Clínico 12 (Diseño Experimental Integrado): Un médico genetista atiende a un paciente oncológico de urgencia en el cual se requiere identificar una secuencia específica de ADN en un locus determinado con sondas fluorescentes, descartando la necesidad de un cultivo previo[cite: 1]. Al mismo tiempo, para otro estudio farmacológico, requiere analizar cómo una variante genética altera la respuesta a un medicamento, topándose con el problema de un tamaño muestral limitado[cite: 1]. ¿Qué técnicas del cuadro resuelven cada uno de estos dos requerimientos en su respectivo orden?</div>
+            <div class="options">
+                <label><input type="radio" name="q20" value="A"> A) 1. Cariotipo / 2. Terapia Génica.</label>
+                <label><input type="radio" name="q20" value="B"> B) 1. FISH (Hibridación In Situ Fluorescente) / 2. Farmacogenética[cite: 1].</label>
+                <label><input type="radio" name="q20" value="C"> C) 1. Mapeo Óptico / 2. CRISPR.</label>
+                <label><input type="radio" name="q20" value="D"> D) 1. CHIPS de ADN / 2. Librería genómica recombinante.</label>
+            </div>
+            <div class="explanation" id="exp20" style="display:none;">Respuesta correcta: B. FISH evalúa secuencias específicas con sondas fluorescentes sin cultivo previo, y la farmacogenética estudia la respuesta a fármacos enfrentando limitaciones de tamaño muestral[cite: 1].</div>
+        </div>
+
+        <div class="btn-container">
+            <button type="button" onclick="calcularResultados()">Calificar Examen Avanzado</button>
+        </div>
+    </form>
+
+    <div id="results"></div>
+</div>
+
+<script>
+    function calcularResultados() {
+        const respuestasCorrectas = {
+            q1: "B", q2: "A", q3: "B", q4: "B", q5: "B",
+            q6: "A", q7: "C", q8: "B", q9: "B", q10: "A",
+            q11: "B", q12: "A", q13: "B", q14: "B", q15: "A",
+            q16: "A", q17: "B", q18: "B", q19: "A", q20: "B"
+        };
+
+        let puntaje = 0;
+        const total = 20;
+
+        for (let i = 1; i <= total; i++) {
+            const qName = "q" + i;
+            const seleccionada = document.querySelector(`input[name="${qName}"]:checked`);
+            const card = document.getElementById(qName);
+            const exp = document.getElementById("exp" + i);
+            
+            exp.style.display = "block";
+
+            card.classList.remove("correct", "incorrect");
+
+            if (seleccionada) {
+                if (seleccionada.value === respuestasCorrectas[qName]) {
+                    puntaje++;
+                    card.classList.add("correct");
+                } else {
+                    card.classList.add("incorrect");
+                }
+            } else {
+                card.classList.add("incorrect");
+            }
+        }
+
+        const resultsDiv = document.getElementById("results");
+        resultsDiv.style.display = "block";
+        resultsDiv.innerHTML = `Tu calificación final es: ${puntaje} / ${total} (${Math.round((puntaje/total)*100)}%)`;
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>
